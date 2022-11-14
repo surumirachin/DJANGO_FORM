@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="container">
+    <table border="2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Class</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for a in records %}
+            <tr>
+                <td>{{ a.id }}</td>
+                <td>{{ a.full_Name }}</td>
+                <td>{{ a.email }}</td>
+                <td>{{ a.age }}</td>
+                <td>{{ a.Class }}</td>
+                <td>{{ a.description}}</td>
+                <td><a href="{% url 'my' id=a.id %}">Edit</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </div>
+    
+</body>
+</html>
